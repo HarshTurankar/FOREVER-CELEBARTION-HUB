@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Corporate Events | Custom Events Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7faff;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #eef6ff, #ffffff);
+        }
+
+        .hero h1 {
+            color: #0879ff;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* EVENTS */
+
+        .events {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .event-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .event-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #0879ff;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef6ff;
+            color: #0879ff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #0879ff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .events {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .events {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Corporate Events 💼</h1>
+
+        <p>
+            Plan professional and memorable corporate events
+            with reliable event services, entertainment and
+            customized arrangements.
+        </p>
+
+    </section>
+
+
+    <!-- EVENT TYPES -->
+
+    <section class="events">
+
+        <!-- Conference -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/corporate-conference.jpg"
+                alt="Corporate Conference"
+            >
+
+            <div class="content">
+
+                <h2>Corporate Conferences</h2>
+
+                <p>
+                    Professional conference arrangements with
+                    seating, stage setup, sound system and
+                    presentation facilities.
+                </p>
+
+                <span class="tag">
+                    Business Event
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Meeting -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/corporate-meeting.jpg"
+                alt="Corporate Meeting"
+            >
+
+            <div class="content">
+
+                <h2>Business Meetings</h2>
+
+                <p>
+                    Comfortable and professional meeting setups
+                    for clients, teams and business discussions.
+                </p>
+
+                <span class="tag">
+                    Meeting
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product Launch -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/product-launch.jpg"
+                alt="Product Launch"
+            >
+
+            <div class="content">
+
+                <h2>Product Launches 🚀</h2>
+
+                <p>
+                    Create an impressive product launch with
+                    stage design, branding, lighting and media setup.
+                </p>
+
+                <span class="tag">
+                    Launch Event
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Award -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/corporate-awards.jpg"
+                alt="Corporate Awards"
+            >
+
+            <div class="content">
+
+                <h2>Award Ceremonies 🏆</h2>
+
+                <p>
+                    Celebrate achievements with elegant stage
+                    decoration, lighting and professional event
+                    arrangements.
+                </p>
+
+                <span class="tag">
+                    Awards
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Team Building -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/team-building.jpg"
+                alt="Team Building"
+            >
+
+            <div class="content">
+
+                <h2>Team Building 🎯</h2>
+
+                <p>
+                    Fun activities and team-building experiences
+                    designed to improve teamwork and engagement.
+                </p>
+
+                <span class="tag">
+                    Team Event
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Office Party -->
+
+        <div class="event-card">
+
+            <img
+                src="/images/office-party.jpg"
+                alt="Office Party"
+            >
+
+            <div class="content">
+
+                <h2>Corporate Parties 🎉</h2>
+
+                <p>
+                    Organize office parties with music, catering,
+                    decoration and entertainment for your team.
+                </p>
+
+                <span class="tag">
+                    Celebration
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Make Your Corporate Event Successful 💙</h2>
+
+        <p>
+            Create a professional event experience your
+            team and guests will remember.
+        </p>
+
+    </section>
+
+</body>
+</html>

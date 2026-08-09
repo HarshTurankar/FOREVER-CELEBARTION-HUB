@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= name %> - Details</title>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+  <style>
+    /* Container margin top */
+    .container {
+      margin-top: 40px;
+      margin-left: 20px;
+      margin-right: 20px;
+    }
+
+    /* Upper section: photo left, details right */
+    .upper-section {
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
+      margin-bottom: 30px;
+    }
+
+    .upper-section .photo {
+      flex: 1;
+      max-width: 45%;
+    }
+
+    .upper-section .details {
+      flex: 1;
+      max-width: 50%;
+    }
+
+    .upper-section img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    /* Slide boxes container */
+    .slide-boxes {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 40px;
+    }
+
+    .slide-box {
+      flex: 1;
+      background: #f0f8ff;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .slide-box:hover {
+      background-color: #d0e7ff;
+    }
+
+    /* Two columns container */
+    .two-columns {
+      display: flex;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .column {
+      flex: 1;
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 25px;
+      box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    }
+
+    .column h4 {
+      margin-bottom: 20px;
+      color: #0d6efd; /* Bootstrap primary */
+    }
+
+    /* Video container */
+    .video-container video {
+      width: 100%;
+      max-height: 300px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+      margin-bottom: 40px;
+    }
+
+    /* Rules and Done Button */
+    .rules {
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+    #done-btn {
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    #done-btn:disabled {
+      background-color: #7da7ff;
+      cursor: not-allowed;
+    }
+  </style>
+  <style>
+  /* Container for two boxes */
+  .two-boxes {
+    display: flex;
+    gap: 200px; /* box के बीच space */
+    justify-content: center;
+    max-width: 900px;
+    margin: 30px auto;
+  }
+
+  /* Each box square shape */
+  .box {
+    position: relative;
+    flex: 1 1 0;
+    max-width: 400px; /* max width */
+    aspect-ratio: 1 / 1; /* square shape */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(207, 205, 205, 0.1);
+    padding: 5px;
+    background: rgb(244, 227, 227);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  /* Image inside box */
+  .box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    flex-grow: 1;
+  }
+
+  /* Popup arrow button */
+  .popup-arrow {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.6);
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 110;
+  }
+
+  /* Popup list rectangle shape */
+  .popup-list {
+    display: none;
+    position: absolute;
+    top: 45px;
+    right: 10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    padding: 15px 20px;
+    list-style: none;
+    width: 240px;   /* चौड़ा किया */
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 100;
+  }
+
+  .popup-list li {
+    padding: 10px 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+  }
+
+  .popup-list li:last-child {
+    border-bottom: none;
+  }
+
+  /* Heading below box */
+  .box h4 {
+    margin-top: 12px;
+    text-align: center;
+    color: #0d6efd;
+  }
+</style>
+
+
+</head>
+<body class="bg-light">
+
+  <div class="container">
+
+   <div class="upper-section" style="display: flex; gap: 30px; align-items: flex-start;">
+
+  <!-- Photo slider left side -->
+  <div class="photo" style="flex: 1; max-width: 45%;">
+    <div id="photoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <!-- Replace these src with your dynamic photos -->
+        <div class="carousel-item active">
+          <img src="<%= photo || 'https://via.placeholder.com/600x400?text=No+Image' %>" class="d-block w-100 rounded" alt="Slide 1">
+        </div>
+        <div class="carousel-item">
+          <img src="<%= photo || 'https://via.placeholder.com/600x400?text=No+Image2' %>" class="d-block w-100 rounded" alt="Slide 2">
+        </div>
+        <div class="carousel-item">
+          <img src="<%= photo || 'https://via.placeholder.com/600x400?text=No+Image3' %>" class="d-block w-100 rounded" alt="Slide 3">
+        </div>
+        <div class="carousel-item">
+          <img src="<%= photo || 'https://via.placeholder.com/600x400?text=No+Image4' %>" class="d-block w-100 rounded" alt="Slide 4">
+        </div>
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#photoCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+
+      <button class="carousel-control-next" type="button" data-bs-target="#photoCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Details right side -->
+  <div class="details" style="flex: 1; max-width: 50%;">
+    <h2 class="text-primary"><%= name %></h2>
+    <p><strong>Address:</strong> <%= address %></p>
+    <p><strong>Rating:</strong> <%= rating || 'Not Rated' %></p>
+  </div>
+
+</div>
+
+<!-- Don't forget to include Bootstrap JS at bottom of body -->
+  <div class="slide-boxes">
+    <div class="slide-box">Checklist</div>
+    <div class="slide-box">Guest List</div>
+    <div class="slide-box">Packages</div>
+    <div class="slide-box">Guidelines</div>
+  </div>
+
+  <div id="topicDetails"></div>
+</div>
+
+   
+   <div class="two-boxes">
+  <!-- Left Box -->
+  <div class="box">
+    <a href="/catering">
+      <img src="/assets/catress.jpg" alt="Banquet Image" style="cursor:pointer;">
+    </a>
+  </div>
+
+  <!-- Right Box -->
+  <div class="box">
+    <a href="/musical">
+      <img src="/assets/song.jpg" alt="Musical Moments Image" style="cursor:pointer;">
+    </a>
+    <button class="popup-arrow">&#9662;</button>
+  </div>
+</div>
+
+    
+
+   
+    <!-- Done Button -->
+   <button id="done-btn"  onclick="window.location.href='/cart?items='+encodeURIComponent(JSON.stringify(cartItems || []))">Done</button>
+
+
+  </div>
+
+<script>
+  // Dummy data for each topic
+  const topicData = {
+    "Checklist": {
+      title: "Wedding Checklist",
+      content: `
+        <ul>
+          <li>Book your wedding venue.</li>
+          <li>Finalize the guest list.</li>
+          <li>Hire photographer & caterer.</li>
+          <li>Send invitations 2 weeks before.</li>
+          <li>Confirm all vendor payments.</li>
+        </ul>
+      `
+    },
+    "Guest List": {
+      title: "Manage Your Guest List",
+      content: `
+        <p>Add, edit or remove guests easily. Keep track of RSVPs and meal preferences.</p>
+        <ul>
+          <li>Family Members – 50</li>
+          <li>Friends – 70</li>
+          <li>Colleagues – 30</li>
+          <li>Total Guests: 150</li>
+        </ul>
+      `
+    },
+    "Packages": {
+      title: "Available Wedding Packages",
+      content: `
+        <p>Choose from our pre-designed packages:</p>
+        <ul>
+          <li><strong>Silver Package:</strong> Venue + Decoration + Catering</li>
+          <li><strong>Gold Package:</strong> Silver + Photography + Music</li>
+          <li><strong>Platinum Package:</strong> Gold + Makeup + Designer Outfit</li>
+        </ul>
+      `
+    },
+    "Guidelines": {
+      title: "Wedding Guidelines",
+      content: `
+        <p>Follow these to make your wedding event smooth:</p>
+        <ul>
+          <li>Keep all vendor contracts in one place.</li>
+          <li>Ensure guests have proper transportation.</li>
+          <li>Keep backup power and sound system ready.</li>
+          <li>Assign someone to manage the event flow.</li>
+        </ul>
+      `
+    }
+  };
+
+  // Select all boxes and the detail container
+  const boxes = document.querySelectorAll('.slide-box');
+  const detailsDiv = document.getElementById('topicDetails');
+
+  boxes.forEach(box => {
+    box.addEventListener('click', () => {
+      const topic = box.textContent.trim();
+      const data = topicData[topic];
+
+      if (data) {
+        detailsDiv.innerHTML = `
+          <h4>${data.title}</h4>
+          <hr>
+          ${data.content}
+        `;
+        detailsDiv.style.display = 'block';
+        detailsDiv.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+</script>
+<script>
+  document.querySelectorAll('.popup-arrow').forEach(arrow => {
+    arrow.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const popupList = arrow.nextElementSibling;
+
+      // Close other popups
+      document.querySelectorAll('.popup-list').forEach(list => {
+        if (list !== popupList) list.style.display = 'none';
+      });
+
+      // Toggle current popup
+      popupList.style.display = popupList.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
+  // Close popups on clicking outside
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.popup-list').forEach(list => {
+      list.style.display = 'none';
+    });
+  });
+</script>
+<script>
+  
+</script>
+
+</body>
+</html>

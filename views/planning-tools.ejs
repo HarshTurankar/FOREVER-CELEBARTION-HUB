@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Planning Tools | Wedding Planner</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fc;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* TOOLS */
+
+        .tools {
+            width: 90%;
+            max-width: 1100px;
+            margin: 45px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .tool-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 16px;
+            text-align: center;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .tool-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .tool-card h2 {
+            color: #d62f83;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .tool-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .tool-btn {
+            display: inline-block;
+            padding: 10px 22px;
+            background: #d62f83;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .tool-btn:hover {
+            background: #b9236d;
+        }
+
+        /* CHECKLIST */
+
+        .checklist {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto 70px;
+
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .checklist h2 {
+            text-align: center;
+            color: #d62f83;
+            margin-bottom: 25px;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            padding: 14px;
+            margin-bottom: 10px;
+
+            background: #fff8fc;
+            border-radius: 8px;
+        }
+
+        .task input {
+            width: 18px;
+            height: 18px;
+            accent-color: #d62f83;
+        }
+
+        .task label {
+            color: #555;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #d62f83;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 22px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .tools {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .tools {
+                grid-template-columns: 1fr;
+            }
+
+            .checklist {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Wedding Planning Tools 💍</h1>
+
+        <p>
+            Plan your dream wedding with simple and powerful tools.
+            Manage your budget, checklist and important wedding tasks
+            all in one place.
+        </p>
+
+    </section>
+
+
+    <!-- TOOLS -->
+
+    <section class="tools">
+
+        <!-- Budget -->
+
+        <div class="tool-card">
+
+            <div class="icon">💰</div>
+
+            <h2>Budget Planner</h2>
+
+            <p>
+                Plan your wedding expenses and keep track of your
+                budget for every important category.
+            </p>
+
+            <a href="/budget-planner" class="tool-btn">
+                Plan Budget
+            </a>
+
+        </div>
+
+
+        <!-- Guest List -->
+
+        <div class="tool-card">
+
+            <div class="icon">👥</div>
+
+            <h2>Guest List</h2>
+
+            <p>
+                Organize your wedding guests and keep track of
+                invitations and attendance.
+            </p>
+
+            <a href="/guest-list" class="tool-btn">
+                Manage Guests
+            </a>
+
+        </div>
+
+
+        <!-- Checklist -->
+
+        <div class="tool-card">
+
+            <div class="icon">📋</div>
+
+            <h2>Wedding Checklist</h2>
+
+            <p>
+                Stay organized with a complete checklist of
+                important wedding tasks.
+            </p>
+
+            <a href="#checklist" class="tool-btn">
+                View Checklist
+            </a>
+
+        </div>
+
+
+        <!-- Timeline -->
+
+        <div class="tool-card">
+
+            <div class="icon">📅</div>
+
+            <h2>Wedding Timeline</h2>
+
+            <p>
+                Create a timeline for your wedding day and make
+                sure everything happens on time.
+            </p>
+
+            <a href="/wedding-timeline" class="tool-btn">
+                Plan Timeline
+            </a>
+
+        </div>
+
+
+        <!-- Vendors -->
+
+        <div class="tool-card">
+
+            <div class="icon">🤝</div>
+
+            <h2>Vendor Planner</h2>
+
+            <p>
+                Find and organize photographers, decorators,
+                caterers and other wedding professionals.
+            </p>
+
+            <a href="/wedding-vendors" class="tool-btn">
+                Find Vendors
+            </a>
+
+        </div>
+
+
+        <!-- Ideas -->
+
+        <div class="tool-card">
+
+            <div class="icon">💡</div>
+
+            <h2>Wedding Ideas</h2>
+
+            <p>
+                Discover decoration, theme, photography and
+                entertainment ideas for your special day.
+            </p>
+
+            <a href="/wedding-ideas" class="tool-btn">
+                Explore Ideas
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CHECKLIST -->
+
+    <section class="checklist" id="checklist">
+
+        <h2>Wedding Planning Checklist ✅</h2>
+
+        <div class="task">
+            <input type="checkbox" id="task1">
+            <label for="task1">Choose Wedding Date</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task2">
+            <label for="task2">Set Wedding Budget</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task3">
+            <label for="task3">Book Wedding Venue</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task4">
+            <label for="task4">Book Caterer</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task5">
+            <label for="task5">Book Photographer</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task6">
+            <label for="task6">Choose Wedding Decoration</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task7">
+            <label for="task7">Send Wedding Invitations</label>
+        </div>
+
+        <div class="task">
+            <input type="checkbox" id="task8">
+            <label for="task8">Finalize Wedding Dress</label>
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Ready to Plan Your Dream Wedding? ❤️</h2>
+
+        <p>
+            Explore our wedding packages and find everything
+            you need for your special day.
+        </p>
+
+        <a href="/wedding-packages" class="cta-btn">
+            Explore Wedding Packages
+        </a>
+
+    </section>
+
+</body>
+</html>

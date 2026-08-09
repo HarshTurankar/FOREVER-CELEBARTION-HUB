@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Results for <%= city %> - <%= type %></title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    .hall {
+      border: 1px solid #ccc; padding: 10px; margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    .hall img {
+      max-width: 300px;
+      height: auto;
+      display: block;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Showing <%= type %>s in <%= city %></h1>
+
+  <% if (data.length === 0) { %>
+    <p>No <%= type %> found in <%= city %>.</p>
+  <% } else { %>
+    <% data.forEach(place => { %>
+      <div class="hall">
+        <h2><%= place.name %></h2>
+        <p><strong>Rating:</strong> <%= place.rating || "N/A" %></p>
+        <p><strong>💰 Price:</strong> ₹<%= place.price || 6000 %></p>
+        <p><strong>Address:</strong> <%= place.formatted_address %></p>
+
+        <!-- फोटो दिखाने के लिए, मान लिया photos URL हो तो -->
+        <% if (place.photos && place.photos.length > 0) { %>
+          <img src="<%= place.photos[0] %>" alt="Photo of <%= place.name %>" />
+        <% } else { %>
+          <p>No photos available</p>
+        <% } %>
+      </div>
+    <% }); %>
+  <% } %>
+
+  <a href="/home">Go Back</a>
+</body>
+</html>

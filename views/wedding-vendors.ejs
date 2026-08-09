@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wedding Vendors | Wedding Planner</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fc;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* CATEGORIES */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 30px 20px 10px;
+        }
+
+        .category {
+            border: 1px solid #d62f83;
+            background: white;
+            color: #d62f83;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category:hover,
+        .category.active {
+            background: #d62f83;
+            color: white;
+        }
+
+        /* VENDORS */
+
+        .vendors {
+            width: 90%;
+            max-width: 1200px;
+            margin: 35px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .vendor-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .vendor-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.13);
+        }
+
+        .vendor-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .vendor-content {
+            padding: 20px;
+        }
+
+        .vendor-content h2 {
+            color: #d62f83;
+            font-size: 20px;
+            margin-bottom: 8px;
+        }
+
+        .type {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #e5a900;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .vendor-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            margin-bottom: 18px;
+        }
+
+        .view-btn {
+            display: block;
+            text-align: center;
+            background: #d62f83;
+            color: white;
+            text-decoration: none;
+            padding: 11px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .view-btn:hover {
+            background: #b9236d;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #d62f83;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 22px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .vendors {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .vendors {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Find Your Perfect Wedding Vendors 💍</h1>
+
+        <p>
+            Discover trusted wedding professionals for every
+            important part of your celebration — from photography
+            and catering to decoration and makeup.
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button class="category active">
+            All
+        </button>
+
+        <button class="category">
+            Photographers
+        </button>
+
+        <button class="category">
+            Caterers
+        </button>
+
+        <button class="category">
+            Decorators
+        </button>
+
+        <button class="category">
+            Makeup Artists
+        </button>
+
+        <button class="category">
+            DJs & Music
+        </button>
+
+    </div>
+
+
+    <!-- VENDORS -->
+
+    <section class="vendors">
+
+        <!-- Photographer -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/wedding-photographer.jpg"
+                alt="Wedding Photographer"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Forever Frames</h2>
+
+                <div class="type">
+                    📸 Wedding Photography
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.8 / 5
+                </div>
+
+                <div class="location">
+                    📍 Mumbai
+                </div>
+
+                <p>
+                    Professional wedding photography and
+                    cinematic storytelling for your special day.
+                </p>
+
+                <a
+                    href="/vendor/forever-frames"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Caterer -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/wedding-catering.jpg"
+                alt="Wedding Catering"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Royal Feast Catering</h2>
+
+                <div class="type">
+                    🍽️ Wedding Catering
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.7 / 5
+                </div>
+
+                <div class="location">
+                    📍 Pune
+                </div>
+
+                <p>
+                    Delicious vegetarian and non-vegetarian menus
+                    prepared specially for wedding celebrations.
+                </p>
+
+                <a
+                    href="/vendor/royal-feast"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Decorator -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/wedding-decorator.jpg"
+                alt="Wedding Decoration"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Dream Decor Studio</h2>
+
+                <div class="type">
+                    🌸 Wedding Decoration
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.9 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Beautiful floral, traditional and modern
+                    wedding decorations customized to your theme.
+                </p>
+
+                <a
+                    href="/vendor/dream-decor"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Makeup -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/bridal-makeup.jpg"
+                alt="Bridal Makeup"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Glow Bridal Studio</h2>
+
+                <div class="type">
+                    💄 Bridal Makeup
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.8 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Professional bridal makeup and styling
+                    designed to make your wedding look unforgettable.
+                </p>
+
+                <a
+                    href="/vendor/glow-bridal"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DJ -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/wedding-dj.jpg"
+                alt="Wedding DJ"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Celebration Beats</h2>
+
+                <div class="type">
+                    🎵 DJ & Entertainment
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.6 / 5
+                </div>
+
+                <div class="location">
+                    📍 Mumbai
+                </div>
+
+                <p>
+                    Professional DJs, sound systems and
+                    entertainment to keep your celebration alive.
+                </p>
+
+                <a
+                    href="/vendor/celebration-beats"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Mehndi -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/bridal-mehndi.jpg"
+                alt="Bridal Mehndi"
+            >
+
+            <div class="vendor-content">
+
+                <h2>Royal Mehndi Artists</h2>
+
+                <div class="type">
+                    🌿 Bridal Mehndi
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.7 / 5
+                </div>
+
+                <div class="location">
+                    📍 Pune
+                </div>
+
+                <p>
+                    Traditional and modern bridal mehndi designs
+                    created by experienced artists.
+                </p>
+
+                <a
+                    href="/vendor/royal-mehndi"
+                    class="view-btn"
+                >
+                    View Details
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Plan Every Detail of Your Wedding ❤️</h2>
+
+        <p>
+            Find the right vendors and create the wedding
+            you've always dreamed of.
+        </p>
+
+        <a
+            href="/wedding-packages"
+            class="cta-btn"
+        >
+            Explore Wedding Packages
+        </a>
+
+    </section>
+
+
+    <!-- CATEGORY JS -->
+
+    <script>
+
+        const categories =
+            document.querySelectorAll(".category");
+
+        categories.forEach(category => {
+
+            category.addEventListener("click", () => {
+
+                categories.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                category.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

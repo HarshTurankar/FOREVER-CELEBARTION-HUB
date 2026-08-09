@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container my-5">
+    <h1>Wedding Services in <%= data.city %></h1>
+
+    <h2>🎯 Halls:</h2>
+    <div class="row">
+        <% data.hall.forEach(hall => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="<%= hall.icon %>" class="card-img-top" alt="Icon">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= hall.name %></h5>
+                        <p class="card-text"><%= hall.address %></p>
+                        <p>⭐ Rating: <%= hall.rating %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <h2>🍽️ Catering:</h2>
+    <div class="row">
+        <% data.catering.forEach(catering => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="<%= catering.icon %>" class="card-img-top" alt="Icon">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= catering.name %></h5>
+                        <p class="card-text"><%= catering.address %></p>
+                        <p>⭐ Rating: <%= catering.rating %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+    <h2>🎉 Decoration:</h2>
+    <div class="row">
+        <% data.decoration.forEach(decoration => { %>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <img src="<%= decoration.icon %>" class="card-img-top" alt="Icon">
+                    <div class="card-body">
+                        <h5 class="card-title"><%= decoration.name %></h5>
+                        <p class="card-text"><%= decoration.address %></p>
+                        <p>⭐ Rating: <%= decoration.rating %></p>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

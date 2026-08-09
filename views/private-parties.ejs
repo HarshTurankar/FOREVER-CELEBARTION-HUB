@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Private Parties | Custom Events Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7faff;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #eef6ff, #ffffff);
+        }
+
+        .hero h1 {
+            color: #0879ff;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .parties {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .party-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .party-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .party-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #0879ff;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef6ff;
+            color: #0879ff;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cta {
+            background: #0879ff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .parties {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .parties {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <section class="hero">
+
+        <h1>Private Parties 🎉</h1>
+
+        <p>
+            Celebrate your special moments with a private event
+            designed around your people, your style and your ideas.
+        </p>
+
+    </section>
+
+
+    <section class="parties">
+
+        <!-- Birthday -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/private-birthday.jpg"
+                alt="Private Birthday Party"
+            >
+
+            <div class="content">
+
+                <h2>Private Birthday 🎂</h2>
+
+                <p>
+                    Celebrate birthdays with customized decoration,
+                    cake, music and entertainment.
+                </p>
+
+                <span class="tag">
+                    Birthday
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Anniversary -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/private-anniversary.jpg"
+                alt="Private Anniversary"
+            >
+
+            <div class="content">
+
+                <h2>Anniversary Celebration ❤️</h2>
+
+                <p>
+                    Create a romantic private celebration with
+                    beautiful decoration, dinner and special moments.
+                </p>
+
+                <span class="tag">
+                    Anniversary
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Engagement -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/private-engagement.jpg"
+                alt="Private Engagement"
+            >
+
+            <div class="content">
+
+                <h2>Engagement Party 💍</h2>
+
+                <p>
+                    Celebrate your engagement with elegant decoration,
+                    catering, music and memorable arrangements.
+                </p>
+
+                <span class="tag">
+                    Engagement
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Family -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/family-party.jpg"
+                alt="Family Party"
+            >
+
+            <div class="content">
+
+                <h2>Family Celebration 👨‍👩‍👧‍👦</h2>
+
+                <p>
+                    Bring your family together for a comfortable
+                    and enjoyable private celebration.
+                </p>
+
+                <span class="tag">
+                    Family
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Get Together -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/get-together.jpg"
+                alt="Get Together"
+            >
+
+            <div class="content">
+
+                <h2>Friends Get-Together 🥳</h2>
+
+                <p>
+                    Plan a fun gathering with music, food,
+                    games and entertainment for your friends.
+                </p>
+
+                <span class="tag">
+                    Friends
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Surprise -->
+
+        <div class="party-card">
+
+            <img
+                src="/images/private-surprise.jpg"
+                alt="Surprise Party"
+            >
+
+            <div class="content">
+
+                <h2>Surprise Party 🎁</h2>
+
+                <p>
+                    Plan a memorable surprise with decorations,
+                    music, gifts and entertainment.
+                </p>
+
+                <span class="tag">
+                    Surprise
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="cta">
+
+        <h2>Create Your Perfect Private Celebration 💙</h2>
+
+        <p>
+            Make your special occasion personal, memorable
+            and completely your own.
+        </p>
+
+    </section>
+
+</body>
+</html>

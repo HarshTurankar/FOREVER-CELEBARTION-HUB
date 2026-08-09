@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Cultural Shows | Festival Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fffaf5;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff3e0, #ffffff);
+        }
+
+        .hero h1 {
+            color: #ff7900;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .shows {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .show-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .show-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .show-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #ff7900;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 6px 12px;
+            background: #fff0df;
+            color: #ff7900;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .cta {
+            background: #ff7900;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .shows {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .shows {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Cultural Shows 🎭</h1>
+
+        <p>
+            Add traditional performances, music and cultural
+            experiences to make your festival celebration
+            truly memorable.
+        </p>
+
+    </section>
+
+
+    <!-- SHOWS -->
+
+    <section class="shows">
+
+        <!-- Dance -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/cultural-dance.jpg"
+                alt="Traditional Dance"
+            >
+
+            <div class="content">
+
+                <h2>Traditional Dance 💃</h2>
+
+                <p>
+                    Enjoy beautiful traditional dance performances
+                    that bring culture and energy to your celebration.
+                </p>
+
+                <span class="tag">
+                    Dance Performance
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Music -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/cultural-music.jpg"
+                alt="Cultural Music"
+            >
+
+            <div class="content">
+
+                <h2>Live Folk Music 🎶</h2>
+
+                <p>
+                    Experience traditional folk music performed
+                    live by talented local artists.
+                </p>
+
+                <span class="tag">
+                    Live Music
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Dhol -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/dhol-tasha.jpg"
+                alt="Dhol Tasha"
+            >
+
+            <div class="content">
+
+                <h2>Dhol Tasha 🥁</h2>
+
+                <p>
+                    Bring powerful traditional beats and festive
+                    energy to your special event.
+                </p>
+
+                <span class="tag">
+                    Traditional
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Garba -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/garba.jpg"
+                alt="Garba"
+            >
+
+            <div class="content">
+
+                <h2>Garba Night 🕺</h2>
+
+                <p>
+                    Organize a colorful Garba celebration with
+                    music, dance and traditional atmosphere.
+                </p>
+
+                <span class="tag">
+                    Dance Night
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Puppet -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/puppet-show.jpg"
+                alt="Puppet Show"
+            >
+
+            <div class="content">
+
+                <h2>Traditional Puppet Show 🎪</h2>
+
+                <p>
+                    A fun traditional puppet performance suitable
+                    for families and children.
+                </p>
+
+                <span class="tag">
+                    Family Show
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Folk -->
+
+        <div class="show-card">
+
+            <img
+                src="/images/folk-performance.jpg"
+                alt="Folk Performance"
+            >
+
+            <div class="content">
+
+                <h2>Folk Performance 🌸</h2>
+
+                <p>
+                    Celebrate Indian culture with colorful
+                    costumes, music and traditional performances.
+                </p>
+
+                <span class="tag">
+                    Cultural
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Bring Culture to Your Celebration 🎊</h2>
+
+        <p>
+            Make your festival event more colorful,
+            traditional and memorable.
+        </p>
+
+    </section>
+
+</body>
+</html>

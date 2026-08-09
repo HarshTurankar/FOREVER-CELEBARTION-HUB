@@ -1,0 +1,19 @@
+<h2>My Bookings</h2>
+
+<table border="1">
+  <tr>
+    <th>Order ID</th>
+    <th>Payment ID</th>
+    <th>Total</th>
+    <th>Date</th>
+  </tr>
+
+  <% bookings.forEach(booking => { %>
+    <tr>
+      <td><%= booking.order_id %></td>
+      <td><%= booking.payment_id %></td>
+      <td>₹<%= booking.total_amount %></td>
+      <td><%= booking.booking_date %></td>
+    </tr>
+  <% }) %>
+</table>

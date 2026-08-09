@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Catering List</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f8f9fa;
+    }
+
+    h2 {
+      text-align: center;
+      margin: 30px 0;
+      font-size: 2rem;
+      color: #333;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      padding: 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 15px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .card-content h3 {
+      margin: 0;
+      font-size: 1.3rem;
+      color: #007bff;
+    }
+
+    .card-content p {
+      font-size: 0.95rem;
+      color: #555;
+      margin: 5px 0;
+    }
+
+    .details-btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .details-btn:hover {
+      background-color: #0056b3;
+    }
+
+    .btn-cart {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 8px 12px;
+      background-color: #28a745;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.2s ease;
+      font-size: 0.9rem;
+      text-align: center;
+      width: 100%;
+      border: none;
+    }
+
+    .btn-cart:hover {
+      background-color: #1e7e34;
+    }
+
+    @media (max-width: 600px) {
+      .card img {
+        height: 160px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🍛 Catering Services</h2>
+
+  <div class="row">
+    <% cateringList.forEach(caterer => { %>
+      <div class="card">
+        <img src="<%= caterer.catering_photo || '/images/no-image.jpg' %>" alt="<%= caterer.catering_name %>">
+        <div class="card-content">
+          <div>
+            <h3><%= caterer.catering_name %></h3>
+            <p><strong>Address:</strong> <%= caterer.catering_address %></p>
+            <p><strong>Phone:</strong> <%= caterer.phone_no %></p>
+            <p><strong>Price:</strong> ₹<%= caterer.price || 3000 %></p>
+          </div>
+
+          <!-- ✅ Add to Cart Button Form -->
+          <form action="/add-to-cart" method="POST" class="mt-2">
+            <input type="hidden" name="id" value="<%= caterer.id %>">
+            <input type="hidden" name="name" value="<%= caterer.catering_name %>">
+            <input type="hidden" name="price" value="<%= caterer.price || 3000 %>">
+            <input type="hidden" name="type" value="catering">
+            <button type="submit" class="btn-cart">Add to Cart</button>
+          </form>
+
+          <!-- View Details -->
+          <a href="/catering/<%= caterer.id %>" class="details-btn">View Details</a>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+
+</body>
+</html>

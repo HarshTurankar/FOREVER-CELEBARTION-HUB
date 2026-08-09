@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decor & Gifts | Anniversary Celebration Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* CATEGORY */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 30px 20px 10px;
+        }
+
+        .category {
+            border: 1px solid #d62f83;
+            background: white;
+            color: #d62f83;
+            padding: 10px 22px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category:hover,
+        .category.active {
+            background: #d62f83;
+            color: white;
+        }
+
+        /* PRODUCTS */
+        .products {
+            width: 90%;
+            max-width: 1200px;
+            margin: 35px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .product-content {
+            padding: 18px;
+        }
+
+        .product-content h3 {
+            color: #d62f83;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .description {
+            color: #777;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 42px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .buy-btn {
+            display: block;
+            text-align: center;
+            background: #d62f83;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .buy-btn:hover {
+            background: #b9236d;
+        }
+
+        /* CTA */
+        .cta {
+            background: #d62f83;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 22px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #ffe2ef;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Decor & Gifts 💕</h1>
+
+        <p>
+            Make your anniversary extra special with beautiful
+            decorations, thoughtful gifts and romantic surprises
+            designed to celebrate your love.
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <button class="category active">
+            All
+        </button>
+
+        <button class="category">
+            Decorations
+        </button>
+
+        <button class="category">
+            Flowers
+        </button>
+
+        <button class="category">
+            Gifts
+        </button>
+
+        <button class="category">
+            Cakes
+        </button>
+
+        <button class="category">
+            Surprises
+        </button>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+
+
+        <!-- Decoration -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/romantic-decoration.jpg"
+                alt="Romantic Decoration"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Romantic Room Decoration
+                </h3>
+
+                <p class="description">
+                    Beautiful balloons, flowers and romantic
+                    lighting setup for your special evening.
+                </p>
+
+                <div class="price">
+                    ₹2,499
+                </div>
+
+                <a
+                    href="/book-now?item=romantic-decoration"
+                    class="buy-btn"
+                >
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Flowers -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/rose-bouquet.jpg"
+                alt="Rose Bouquet"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Premium Rose Bouquet 🌹
+                </h3>
+
+                <p class="description">
+                    A beautiful fresh rose bouquet prepared
+                    specially for your loved one.
+                </p>
+
+                <div class="price">
+                    ₹999
+                </div>
+
+                <a
+                    href="/book-now?item=rose-bouquet"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Gift -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/couple-gift.jpg"
+                alt="Couple Gift"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Personalized Couple Gift 🎁
+                </h3>
+
+                <p class="description">
+                    A customized gift designed to make your
+                    anniversary truly memorable.
+                </p>
+
+                <div class="price">
+                    ₹1,499
+                </div>
+
+                <a
+                    href="/book-now?item=couple-gift"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cake -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/anniversary-cake.jpg"
+                alt="Anniversary Cake"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Anniversary Cake 🎂
+                </h3>
+
+                <p class="description">
+                    Delicious customized cake with a beautiful
+                    anniversary design.
+                </p>
+
+                <div class="price">
+                    ₹1,199
+                </div>
+
+                <a
+                    href="/book-now?item=anniversary-cake"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Candle Setup -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/candlelight-setup.jpg"
+                alt="Candlelight Setup"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Candlelight Setup 🕯️
+                </h3>
+
+                <p class="description">
+                    Elegant candles and romantic lighting for
+                    a beautiful dinner experience.
+                </p>
+
+                <div class="price">
+                    ₹1,999
+                </div>
+
+                <a
+                    href="/book-now?item=candlelight-setup"
+                    class="buy-btn"
+                >
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory Gift -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/memory-frame.jpg"
+                alt="Memory Frame"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Personalized Memory Frame 🖼️
+                </h3>
+
+                <p class="description">
+                    Turn your favorite couple photo into
+                    a beautiful memory frame.
+                </p>
+
+                <div class="price">
+                    ₹799
+                </div>
+
+                <a
+                    href="/book-now?item=memory-frame"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Surprise -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/surprise-box.jpg"
+                alt="Surprise Gift Box"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Anniversary Surprise Box 💝
+                </h3>
+
+                <p class="description">
+                    A special surprise box filled with romantic
+                    gifts and personalized items.
+                </p>
+
+                <div class="price">
+                    ₹2,999
+                </div>
+
+                <a
+                    href="/book-now?item=surprise-box"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Teddy -->
+
+        <div class="product-card">
+
+            <img
+                src="/images/teddy-gift.jpg"
+                alt="Teddy Gift"
+            >
+
+            <div class="product-content">
+
+                <h3>
+                    Love Teddy Gift 🧸
+                </h3>
+
+                <p class="description">
+                    A cute romantic gift perfect for making
+                    your partner smile.
+                </p>
+
+                <div class="price">
+                    ₹699
+                </div>
+
+                <a
+                    href="/book-now?item=love-teddy"
+                    class="buy-btn"
+                >
+                    Order Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Make Your Anniversary Unforgettable ❤️
+        </h2>
+
+        <p>
+            Choose your favorite decorations and gifts,
+            or plan a complete anniversary celebration.
+        </p>
+
+        <a
+            href="/packages"
+            class="cta-btn"
+        >
+            View Anniversary Packages
+        </a>
+
+    </section>
+
+
+    <!-- CATEGORY JS -->
+
+    <script>
+
+        const categories =
+            document.querySelectorAll(".category");
+
+        categories.forEach(category => {
+
+            category.addEventListener("click", () => {
+
+                categories.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                category.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+
+</body>
+</html>

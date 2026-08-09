@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Lighting & Music | Festival Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fffaf5;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff3e0, #ffffff);
+        }
+
+        .hero h1 {
+            color: #ff7900;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* SERVICES */
+
+        .services {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #ff7900;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .select-btn {
+            display: block;
+            text-align: center;
+            background: #ff7900;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .select-btn:hover {
+            background: #df6500;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #ff7900;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .services {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .services {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Lighting & Music ✨🎶</h1>
+
+        <p>
+            Create the perfect festival atmosphere with beautiful
+            lighting, powerful sound systems, DJs and live music.
+        </p>
+
+    </section>
+
+
+    <!-- SERVICES -->
+
+    <section class="services">
+
+        <!-- Decorative Lighting -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/decorative-lighting.jpg"
+                alt="Decorative Lighting"
+            >
+
+            <div class="content">
+
+                <h2>Decorative Lighting ✨</h2>
+
+                <p>
+                    Beautiful decorative lights to create a
+                    bright and festive atmosphere.
+                </p>
+
+                <div class="price">
+                    ₹1,999
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Fairy Lights -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/fairy-lights.jpg"
+                alt="Fairy Lights"
+            >
+
+            <div class="content">
+
+                <h2>Fairy Light Setup 💡</h2>
+
+                <p>
+                    Elegant fairy lights for stages, entrances,
+                    walls and outdoor festival areas.
+                </p>
+
+                <div class="price">
+                    ₹1,499
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- DJ -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/festival-dj.jpg"
+                alt="Festival DJ"
+            >
+
+            <div class="content">
+
+                <h2>Festival DJ 🎧</h2>
+
+                <p>
+                    Professional DJ setup with energetic music
+                    for your festival celebration.
+                </p>
+
+                <div class="price">
+                    ₹4,999
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Sound -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/sound-system.jpg"
+                alt="Sound System"
+            >
+
+            <div class="content">
+
+                <h2>Premium Sound System 🔊</h2>
+
+                <p>
+                    High-quality speakers and microphones for
+                    large festival events.
+                </p>
+
+                <div class="price">
+                    ₹3,499
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Live Music -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/live-music.jpg"
+                alt="Live Music"
+            >
+
+            <div class="content">
+
+                <h2>Live Music 🎸</h2>
+
+                <p>
+                    Talented musicians and singers to bring
+                    live entertainment to your celebration.
+                </p>
+
+                <div class="price">
+                    ₹7,999
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Stage Lighting -->
+
+        <div class="service-card">
+
+            <img
+                src="/images/stage-lighting.jpg"
+                alt="Stage Lighting"
+            >
+
+            <div class="content">
+
+                <h2>Stage Lighting 🌟</h2>
+
+                <p>
+                    Professional stage lights and special
+                    effects for performances and events.
+                </p>
+
+                <div class="price">
+                    ₹5,999
+                </div>
+
+                <a href="/lighting-music" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Make Your Festival Shine 🎊</h2>
+
+        <p>
+            Combine beautiful lighting with great music
+            for an unforgettable celebration.
+        </p>
+
+    </section>
+
+</body>
+</html>

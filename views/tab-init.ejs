@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Initializing...</title>
+</head>
+<body>
+  <p>Initializing tab…</p>
+  <script>
+    // dest passed from server
+    const dest = "<%= dest %>";
+
+    // call /init-tab to get a token for this tab
+    fetch('/init-tab', { method: 'POST', headers: { 'Content-Type': 'application/json' } })
+      .then(r => r.json())
+      .then(data => {
+        if (data?.tab) {
+          // store token in sessionStorage (per-tab)
+          sessionStorage.setItem('tabToken', data.tab);
+          // redirect to destination with tab token in query param very briefly
+          // We will remove the token from URL once the page loads (see snippet for home layout)
+          window.location.href = dest + '?tab=' + data.tab;
+        } else {
+          // fallback: go to login
+          window.location.href = '/login';
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        window.location.href = '/login';
+      });
+  </script>
+</body>
+</html>

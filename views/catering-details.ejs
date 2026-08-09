@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= caterer.catering_name %> - Details</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .main-img {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    .info-section h2 {
+      font-weight: bold;
+      color: #333;
+    }
+    .info-text {
+      font-size: 1rem;
+      color: #555;
+    }
+    .rating {
+      font-size: 1.1rem;
+      color: #ff9800;
+      font-weight: bold;
+    }
+    .btn-back {
+      background: #6c757d;
+      color: white;
+      border-radius: 20px;
+      padding: 8px 20px;
+      transition: background 0.3s;
+    }
+    .btn-back:hover {
+      background: #5a6268;
+      color: white;
+    }
+    .carousel-item img {
+      height: 300px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+.d-flex div:hover {
+  transform: scale(1.07);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<div class="container my-5">
+
+  
+  <div class="row g-4">
+    <!-- Left Side: Main Image -->
+    <div class="col-md-5">
+      <img src="<%= caterer.catering_photo || '/images/no-image.jpg' %>" 
+           alt="<%= caterer.catering_name %>" 
+           class="main-img">
+    </div>
+
+    <!-- Right Side: Details -->
+    <div class="col-md-7 info-section">
+      <h2><%= caterer.catering_name %></h2>
+      <p class="info-text"><strong>📍 Address:</strong> <%= caterer.catering_address %></p>
+      <p class="info-text"><strong>📞 Phone:</strong> <%= caterer.phone %></p>
+      <p class="rating">⭐ <%= caterer.rating %> / 5</p>
+      <hr>
+      <p class="info-text"><%= caterer.information %></p>
+    </div>
+  </div>
+
+  <% if (caterer.catering_dishes_photos && caterer.catering_dishes_photos.length > 0) { %>
+  <div class="mt-5">
+    <h4 class="mb-4 text-center">Our Signature Dishes</h4>
+    <div class="d-flex justify-content-center gap-5 flex-wrap">
+      <% caterer.catering_dishes_photos.slice(0,4).forEach(photo => { %>
+        <div style="width: 230px; height: 160px; border: 1px solid #ccc; border-radius: 15px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); cursor: pointer; transition: transform 0.3s;">
+          <img src="<%= photo %>" alt="Dish Photo" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+      <% }) %>
+    </div>
+  </div>
+<% } %>
+
+
+
+  <!-- Return link below slider -->
+  <div class="mt-4 text-center">
+    <a href="/catering" style="text-decoration:none; font-weight:600; color:#0d6efd;">← Return to Catering List</a>
+  </div>
+
+  
+
+  <!-- Extra Section: Contact CTA -->
+  <div class="mt-5 text-center">
+    <h4>Interested in our Catering Services?</h4>
+    <p>Contact us today and let’s make your event unforgettable!</p>
+    <a href="tel:<%= caterer.phone %>" class="btn btn-primary">📞 Call Now</a>
+  </div>
+
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

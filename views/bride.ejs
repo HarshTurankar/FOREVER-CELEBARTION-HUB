@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bride | Wedding Planner</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fc;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px 55px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* BRIDE TOOLS */
+
+        .section {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: #d62f83;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .bride-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .bride-card {
+            background: white;
+            padding: 30px 25px;
+            border-radius: 16px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .bride-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .bride-card h3 {
+            color: #d62f83;
+            font-size: 21px;
+            margin-bottom: 10px;
+        }
+
+        .bride-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #d62f83;
+            color: white;
+            text-decoration: none;
+            padding: 10px 22px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: #b9236d;
+        }
+
+        /* CHECKLIST */
+
+        .checklist {
+            background: white;
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .checklist h2 {
+            text-align: center;
+            color: #d62f83;
+            margin-bottom: 25px;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px;
+            margin-bottom: 10px;
+            background: #fff8fc;
+            border-radius: 8px;
+        }
+
+        .task input {
+            width: 18px;
+            height: 18px;
+            accent-color: #d62f83;
+        }
+
+        .task label {
+            color: #555;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #d62f83;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 22px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+            .bride-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .bride-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checklist {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Bride's Wedding Hub 👰</h1>
+
+        <p>
+            Everything a bride needs to prepare for her special day.
+            Organize your bridal look, beauty, outfits and important
+            wedding preparations in one place.
+        </p>
+
+    </section>
+
+
+    <!-- BRIDE SERVICES -->
+
+    <section class="section">
+
+        <div class="section-title">
+
+            <h2>Plan Your Bridal Journey 💕</h2>
+
+            <p>
+                Explore everything you need before walking down the aisle.
+            </p>
+
+        </div>
+
+
+        <div class="bride-grid">
+
+
+            <!-- Dress -->
+
+            <div class="bride-card">
+
+                <div class="icon">👗</div>
+
+                <h3>Bridal Outfit</h3>
+
+                <p>
+                    Explore bridal dresses, sarees, lehengas and
+                    wedding outfit ideas for every ceremony.
+                </p>
+
+                <a href="/bridal-outfits" class="btn">
+                    Explore Outfits
+                </a>
+
+            </div>
+
+
+            <!-- Makeup -->
+
+            <div class="bride-card">
+
+                <div class="icon">💄</div>
+
+                <h3>Makeup & Beauty</h3>
+
+                <p>
+                    Find professional makeup artists and plan your
+                    perfect bridal look.
+                </p>
+
+                <a href="/bridal-makeup" class="btn">
+                    Find Makeup
+                </a>
+
+            </div>
+
+
+            <!-- Mehndi -->
+
+            <div class="bride-card">
+
+                <div class="icon">🌿</div>
+
+                <h3>Mehndi</h3>
+
+                <p>
+                    Discover beautiful bridal mehndi designs and
+                    experienced mehndi artists.
+                </p>
+
+                <a href="/bridal-mehndi" class="btn">
+                    Explore Mehndi
+                </a>
+
+            </div>
+
+
+            <!-- Jewellery -->
+
+            <div class="bride-card">
+
+                <div class="icon">💎</div>
+
+                <h3>Bridal Jewellery</h3>
+
+                <p>
+                    Choose necklaces, earrings, bangles and other
+                    jewellery to complete your bridal look.
+                </p>
+
+                <a href="/bridal-jewellery" class="btn">
+                    View Jewellery
+                </a>
+
+            </div>
+
+
+            <!-- Hairstyle -->
+
+            <div class="bride-card">
+
+                <div class="icon">💇‍♀️</div>
+
+                <h3>Hair & Styling</h3>
+
+                <p>
+                    Find beautiful bridal hairstyles and professional
+                    hair styling services.
+                </p>
+
+                <a href="/bridal-hairstyle" class="btn">
+                    Explore Styles
+                </a>
+
+            </div>
+
+
+            <!-- Skincare -->
+
+            <div class="bride-card">
+
+                <div class="icon">✨</div>
+
+                <h3>Beauty Preparation</h3>
+
+                <p>
+                    Plan your pre-wedding beauty appointments and
+                    important bridal preparation tasks.
+                </p>
+
+                <a href="/beauty-preparation" class="btn">
+                    Plan Preparation
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BRIDAL CHECKLIST -->
+
+    <section class="section">
+
+        <div class="checklist">
+
+            <h2>Bridal Preparation Checklist ✅</h2>
+
+            <div class="task">
+                <input type="checkbox" id="task1">
+                <label for="task1">
+                    Finalize Wedding Outfit
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task2">
+                <label for="task2">
+                    Book Makeup Artist
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task3">
+                <label for="task3">
+                    Book Mehndi Artist
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task4">
+                <label for="task4">
+                    Choose Bridal Jewellery
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task5">
+                <label for="task5">
+                    Finalize Hairstyle
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task6">
+                <label for="task6">
+                    Complete Beauty Appointments
+                </label>
+            </div>
+
+            <div class="task">
+                <input type="checkbox" id="task7">
+                <label for="task7">
+                    Prepare Wedding Day Emergency Kit
+                </label>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Ready for Your Big Day? 💍</h2>
+
+        <p>
+            Find everything you need to make your wedding
+            day beautiful and unforgettable.
+        </p>
+
+        <a href="/wedding-packages" class="cta-btn">
+            Explore Wedding Packages
+        </a>
+
+    </section>
+
+</body>
+</html>

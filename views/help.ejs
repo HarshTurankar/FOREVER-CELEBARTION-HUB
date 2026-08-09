@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Help Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <h2>🆘 Help & Support</h2>
+        <p>Hello <strong><%= user.name %></strong>, how can we assist you?</p>
+
+        <div class="accordion" id="helpAccordion">
+            <!-- FAQ 1 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqOne">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        How do I make a booking?
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#helpAccordion">
+                    <div class="accordion-body">
+                        You can make a booking by going to the venue page and clicking the "Book Now" button.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 2 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqTwo">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        How can I cancel or change a booking?
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                    <div class="accordion-body">
+                        Go to the "My Booking" section in your profile and click on the booking you want to change or cancel.
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ 3 -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="faqThree">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        How do I contact support?
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#helpAccordion">
+                    <div class="accordion-body">
+                        You can contact us via email at <strong>support@weddingplanner.com</strong> or call us at <strong>+91-9876543210</strong>.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-4">
+            <p>Still need help? <a href="/feedback">Send us feedback</a> or <strong>Chat with our support team</strong>.</p>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

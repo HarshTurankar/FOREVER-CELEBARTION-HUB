@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Anniversary Packages | Anniversary Celebration Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        /* Hero */
+        .hero {
+            text-align: center;
+            padding: 55px 20px 45px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* Packages */
+        .packages {
+            width: 90%;
+            max-width: 1150px;
+            margin: 45px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+            position: relative;
+        }
+
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .package-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .package-content {
+            padding: 22px;
+        }
+
+        .package-content h2 {
+            color: #d62f83;
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 18px;
+            color: #333;
+        }
+
+        .price span {
+            font-size: 14px;
+            color: #888;
+            font-weight: normal;
+        }
+
+        .features {
+            list-style: none;
+            margin-bottom: 22px;
+        }
+
+        .features li {
+            margin: 11px 0;
+            color: #555;
+            font-size: 14px;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #d62f83;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .book-btn {
+            display: block;
+            text-align: center;
+            text-decoration: none;
+            background: #d62f83;
+            color: white;
+            padding: 11px;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .book-btn:hover {
+            background: #b9236d;
+        }
+
+        /* Popular */
+        .popular {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+
+            background: #d62f83;
+            color: white;
+
+            padding: 6px 12px;
+            border-radius: 20px;
+
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* Bottom CTA */
+        .cta {
+            text-align: center;
+            background: #d62f83;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 22px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: white;
+            color: #d62f83;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #ffe2ef;
+        }
+
+        /* Responsive */
+        @media (max-width: 1000px) {
+            .packages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .packages {
+                grid-template-columns: 1fr;
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Choose Your Perfect Anniversary Package 💕</h1>
+
+        <p>
+            From intimate romantic dinners to luxurious anniversary
+            celebrations, choose a package designed to make your
+            special day unforgettable.
+        </p>
+
+    </section>
+
+
+    <!-- Packages -->
+    <section class="packages">
+
+        <!-- Basic -->
+        <div class="package-card">
+
+            <img
+                src="/images/package-basic.jpg"
+                alt="Basic Anniversary Package"
+                class="package-image"
+            >
+
+            <div class="package-content">
+
+                <h2>Sweet Moments</h2>
+
+                <div class="price">
+                    ₹4,999 <span>/ couple</span>
+                </div>
+
+                <ul class="features">
+                    <li>Romantic Table Decoration</li>
+                    <li>Candlelight Dinner</li>
+                    <li>Flower Decoration</li>
+                    <li>Welcome Cake</li>
+                    <li>Photography - 20 Photos</li>
+                </ul>
+
+                <a href="/book-now?package=sweet-moments"
+                   class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Romantic -->
+        <div class="package-card">
+
+            <div class="popular">
+                MOST POPULAR
+            </div>
+
+            <img
+                src="/images/package-romantic.jpg"
+                alt="Romantic Anniversary Package"
+                class="package-image"
+            >
+
+            <div class="package-content">
+
+                <h2>Romantic Escape</h2>
+
+                <div class="price">
+                    ₹9,999 <span>/ couple</span>
+                </div>
+
+                <ul class="features">
+                    <li>Premium Romantic Decoration</li>
+                    <li>Candlelight Dinner</li>
+                    <li>Premium Cake</li>
+                    <li>Fresh Flower Bouquet</li>
+                    <li>Professional Photography</li>
+                    <li>Couple Welcome Setup</li>
+                </ul>
+
+                <a href="/book-now?package=romantic-escape"
+                   class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Premium -->
+        <div class="package-card">
+
+            <img
+                src="/images/package-premium.jpg"
+                alt="Premium Anniversary Package"
+                class="package-image"
+            >
+
+            <div class="package-content">
+
+                <h2>Forever Love</h2>
+
+                <div class="price">
+                    ₹19,999 <span>/ couple</span>
+                </div>
+
+                <ul class="features">
+                    <li>Luxury Venue Decoration</li>
+                    <li>Private Candlelight Dinner</li>
+                    <li>Premium Cake</li>
+                    <li>Rose Bouquet</li>
+                    <li>Professional Photography</li>
+                    <li>Anniversary Video</li>
+                </ul>
+
+                <a href="/book-now?package=forever-love"
+                   class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Luxury -->
+        <div class="package-card">
+
+            <img
+                src="/images/package-luxury.jpg"
+                alt="Luxury Anniversary Package"
+                class="package-image"
+            >
+
+            <div class="package-content">
+
+                <h2>Royal Anniversary</h2>
+
+                <div class="price">
+                    ₹39,999 <span>/ couple</span>
+                </div>
+
+                <ul class="features">
+                    <li>Luxury Private Venue</li>
+                    <li>Grand Decoration</li>
+                    <li>Premium Candlelight Dinner</li>
+                    <li>Designer Cake</li>
+                    <li>Professional Photo & Video</li>
+                    <li>Live Music</li>
+                    <li>Special Couple Surprise</li>
+                </ul>
+
+                <a href="/book-now?package=royal-anniversary"
+                   class="book-btn">
+                    Book Now
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Want Something Special? ❤️</h2>
+
+        <p>
+            Create a customized anniversary celebration
+            according to your own love story.
+        </p>
+
+        <a href="/book-now" class="cta-btn">
+            Plan My Anniversary
+        </a>
+
+    </section>
+
+</body>
+</html>

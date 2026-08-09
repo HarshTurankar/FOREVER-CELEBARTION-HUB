@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Festival Decor | Festival Events</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fffaf5;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff3e0, #ffffff);
+        }
+
+        .hero h1 {
+            color: #ff7900;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        /* CATEGORIES */
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 30px 20px 10px;
+        }
+
+        .category {
+            padding: 10px 20px;
+            border: 1px solid #ff7900;
+            border-radius: 25px;
+            background: white;
+            color: #ff7900;
+            cursor: pointer;
+        }
+
+        .category.active,
+        .category:hover {
+            background: #ff7900;
+            color: white;
+        }
+
+        /* DECORATIONS */
+
+        .decorations {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .decor-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .decor-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .decor-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 18px;
+        }
+
+        .content h2 {
+            color: #ff7900;
+            font-size: 19px;
+            margin-bottom: 9px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 42px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .select-btn {
+            display: block;
+            text-align: center;
+            background: #ff7900;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .select-btn:hover {
+            background: #df6500;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #ff7900;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+            .decorations {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .decorations {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Festival Decor ✨</h1>
+
+        <p>
+            Bring every celebration to life with beautiful,
+            traditional and modern festival decorations designed
+            for unforgettable moments.
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <div class="category active">
+            All
+        </div>
+
+        <div class="category">
+            Diwali
+        </div>
+
+        <div class="category">
+            Holi
+        </div>
+
+        <div class="category">
+            Ganesh Utsav
+        </div>
+
+        <div class="category">
+            Christmas
+        </div>
+
+        <div class="category">
+            Traditional
+        </div>
+
+    </div>
+
+
+    <!-- DECORATION CARDS -->
+
+    <section class="decorations">
+
+
+        <!-- Diwali -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/diwali-decor.jpg"
+                alt="Diwali Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Diwali Decoration 🪔</h2>
+
+                <p>
+                    Elegant diyas, flowers, rangoli and
+                    beautiful lighting for Diwali celebrations.
+                </p>
+
+                <div class="price">
+                    ₹2,499
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Holi -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/holi-decor.jpg"
+                alt="Holi Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Holi Celebration 🎨</h2>
+
+                <p>
+                    Colorful decorations and vibrant setups
+                    for a fun Holi celebration.
+                </p>
+
+                <div class="price">
+                    ₹1,999
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Ganesh -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/ganesh-decor.jpg"
+                alt="Ganesh Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Ganesh Utsav 🌺</h2>
+
+                <p>
+                    Traditional floral decoration and
+                    beautiful festive arrangements.
+                </p>
+
+                <div class="price">
+                    ₹3,499
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Christmas -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/christmas-decor.jpg"
+                alt="Christmas Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Christmas Setup 🎄</h2>
+
+                <p>
+                    Christmas trees, lights and festive
+                    decorations for a magical celebration.
+                </p>
+
+                <div class="price">
+                    ₹2,999
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Traditional -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/traditional-decor.jpg"
+                alt="Traditional Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Traditional Decor 🏵️</h2>
+
+                <p>
+                    Classic Indian decoration with flowers,
+                    torans and traditional elements.
+                </p>
+
+                <div class="price">
+                    ₹2,799
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Lights -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/festival-lights.jpg"
+                alt="Festival Lights"
+            >
+
+            <div class="content">
+
+                <h2>Festive Lighting 💡</h2>
+
+                <p>
+                    Beautiful decorative lights to create
+                    a bright and festive atmosphere.
+                </p>
+
+                <div class="price">
+                    ₹1,799
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Floral -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/festival-flower.jpg"
+                alt="Festival Flowers"
+            >
+
+            <div class="content">
+
+                <h2>Floral Decoration 🌸</h2>
+
+                <p>
+                    Fresh flowers and creative floral
+                    arrangements for your celebration.
+                </p>
+
+                <div class="price">
+                    ₹2,199
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- Rangoli -->
+
+        <div class="decor-card">
+
+            <img
+                src="/images/rangoli-decor.jpg"
+                alt="Rangoli Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Rangoli Setup 🎨</h2>
+
+                <p>
+                    Beautiful traditional rangoli designs
+                    to welcome your guests.
+                </p>
+
+                <div class="price">
+                    ₹799
+                </div>
+
+                <a href="/festival-decor" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Make Your Festival Celebration Special 🎊</h2>
+
+        <p>
+            Choose beautiful decorations and create
+            unforgettable festive memories.
+        </p>
+
+    </section>
+
+
+    <script>
+
+        const categories =
+            document.querySelectorAll(".category");
+
+        categories.forEach(category => {
+
+            category.addEventListener("click", () => {
+
+                categories.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                category.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

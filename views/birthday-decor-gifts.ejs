@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Decor & Gifts | Birthday Vibes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff0f6, #ffffff);
+        }
+
+        .hero h1 {
+            color: #ff3d81;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 30px 20px 10px;
+        }
+
+        .category {
+            padding: 10px 20px;
+            border: 1px solid #ff3d81;
+            border-radius: 25px;
+            background: white;
+            color: #ff3d81;
+        }
+
+        .category.active {
+            background: #ff3d81;
+            color: white;
+        }
+
+        .products {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 18px;
+        }
+
+        .content h2 {
+            color: #ff3d81;
+            font-size: 19px;
+            margin-bottom: 8px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 42px;
+        }
+
+        .price {
+            font-size: 21px;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .select-btn {
+            display: block;
+            text-align: center;
+            background: #ff3d81;
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .select-btn:hover {
+            background: #e52d6d;
+        }
+
+        .cta {
+            background: #ff3d81;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 1000px) {
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Birthday Decor & Gifts 🎁</h1>
+
+        <p>
+            Make every birthday extra special with beautiful
+            decorations, personalized gifts, cakes and fun surprises.
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <div class="category active">All</div>
+        <div class="category">Decorations</div>
+        <div class="category">Cakes</div>
+        <div class="category">Gifts</div>
+        <div class="category">Balloons</div>
+        <div class="category">Surprises</div>
+
+    </div>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products">
+
+        <div class="product-card">
+
+            <img
+                src="/images/birthday-decoration.jpg"
+                alt="Birthday Decoration"
+            >
+
+            <div class="content">
+
+                <h2>Birthday Theme Decoration 🎈</h2>
+
+                <p>
+                    Colorful balloons and customized theme
+                    decoration for your special celebration.
+                </p>
+
+                <div class="price">₹2,499</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/birthday-cake-gift.jpg"
+                alt="Birthday Cake"
+            >
+
+            <div class="content">
+
+                <h2>Customized Birthday Cake 🎂</h2>
+
+                <p>
+                    Delicious cake with your preferred flavor,
+                    design and personalized message.
+                </p>
+
+                <div class="price">₹999</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/birthday-gift-box.jpg"
+                alt="Birthday Gift Box"
+            >
+
+            <div class="content">
+
+                <h2>Personalized Gift Box 🎁</h2>
+
+                <p>
+                    A special collection of personalized gifts
+                    prepared for your loved one's birthday.
+                </p>
+
+                <div class="price">₹1,499</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/balloon-bouquet.jpg"
+                alt="Balloon Bouquet"
+            >
+
+            <div class="content">
+
+                <h2>Balloon Bouquet 🎈</h2>
+
+                <p>
+                    Beautiful balloon arrangements perfect for
+                    birthdays and surprise celebrations.
+                </p>
+
+                <div class="price">₹799</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/surprise-box.jpg"
+                alt="Surprise Box"
+            >
+
+            <div class="content">
+
+                <h2>Birthday Surprise Box 💝</h2>
+
+                <p>
+                    A fun surprise box filled with gifts,
+                    chocolates and personalized items.
+                </p>
+
+                <div class="price">₹1,999</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/photo-collage.jpg"
+                alt="Photo Collage"
+            >
+
+            <div class="content">
+
+                <h2>Memory Photo Collage 📸</h2>
+
+                <p>
+                    Turn your favorite memories into a beautiful
+                    personalized birthday photo collage.
+                </p>
+
+                <div class="price">₹699</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/chocolate-box.jpg"
+                alt="Chocolate Gift Box"
+            >
+
+            <div class="content">
+
+                <h2>Premium Chocolate Box 🍫</h2>
+
+                <p>
+                    A premium chocolate collection perfect
+                    for making someone's birthday sweeter.
+                </p>
+
+                <div class="price">₹899</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="product-card">
+
+            <img
+                src="/images/teddy-birthday.jpg"
+                alt="Birthday Teddy"
+            >
+
+            <div class="content">
+
+                <h2>Birthday Teddy 🧸</h2>
+
+                <p>
+                    A cute teddy gift that adds an extra
+                    touch of happiness to the celebration.
+                </p>
+
+                <div class="price">₹599</div>
+
+                <a href="/birthday-decor-gifts" class="select-btn">
+                    Select
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Make Their Birthday Extra Special 🎉</h2>
+
+        <p>
+            Choose beautiful decorations and thoughtful gifts
+            for an unforgettable celebration.
+        </p>
+
+    </section>
+
+</body>
+</html>

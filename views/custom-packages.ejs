@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Packages | Custom Events Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f7faff;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #eef6ff, #ffffff);
+        }
+
+        .hero h1 {
+            color: #0879ff;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .packages {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 25px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .package-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .package-card h2 {
+            color: #0879ff;
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            margin-bottom: 18px;
+        }
+
+        .features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .features li {
+            color: #666;
+            font-size: 14px;
+            margin: 11px 0;
+        }
+
+        .features li::before {
+            content: "✓";
+            color: #0879ff;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .select-btn {
+            display: block;
+            background: #0879ff;
+            color: white;
+            text-decoration: none;
+            padding: 11px;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+
+        .select-btn:hover {
+            background: #0665d8;
+        }
+
+        .custom-box {
+            width: 90%;
+            max-width: 900px;
+            margin: 0 auto 70px;
+            padding: 40px;
+            background: white;
+            text-align: center;
+            border-radius: 16px;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+        }
+
+        .custom-box h2 {
+            color: #0879ff;
+            margin-bottom: 12px;
+        }
+
+        .custom-box p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .cta {
+            background: #0879ff;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .packages {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .packages {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-box {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Custom Event Packages 📅</h1>
+
+        <p>
+            Choose a package that fits your event or create
+            your celebration around your own requirements.
+        </p>
+
+    </section>
+
+
+    <!-- PACKAGES -->
+
+    <section class="packages">
+
+        <!-- BASIC -->
+
+        <div class="package-card">
+
+            <div class="icon">🎉</div>
+
+            <h2>Basic Event</h2>
+
+            <div class="price">
+                ₹9,999
+            </div>
+
+            <ul class="features">
+                <li>Basic Decoration</li>
+                <li>Sound System</li>
+                <li>Basic Catering</li>
+                <li>Event Coordination</li>
+            </ul>
+
+            <a href="/custom-packages" class="select-btn">
+                Select Package
+            </a>
+
+        </div>
+
+
+        <!-- PREMIUM -->
+
+        <div class="package-card">
+
+            <div class="icon">⭐</div>
+
+            <h2>Premium Event</h2>
+
+            <div class="price">
+                ₹24,999
+            </div>
+
+            <ul class="features">
+                <li>Premium Decoration</li>
+                <li>Professional Sound</li>
+                <li>Full Catering</li>
+                <li>Photography</li>
+                <li>Event Entertainment</li>
+            </ul>
+
+            <a href="/custom-packages" class="select-btn">
+                Select Package
+            </a>
+
+        </div>
+
+
+        <!-- LUXURY -->
+
+        <div class="package-card">
+
+            <div class="icon">👑</div>
+
+            <h2>Luxury Event</h2>
+
+            <div class="price">
+                ₹49,999
+            </div>
+
+            <ul class="features">
+                <li>Luxury Decoration</li>
+                <li>Premium Catering</li>
+                <li>Photo & Video</li>
+                <li>Live Entertainment</li>
+                <li>Complete Event Management</li>
+            </ul>
+
+            <a href="/custom-packages" class="select-btn">
+                Select Package
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- CUSTOM BOX -->
+
+    <section class="custom-box">
+
+        <h2>Need Something Different? 💡</h2>
+
+        <p>
+            Every event is unique. You can combine decoration,
+            catering, music, entertainment and other services
+            according to your event requirements.
+        </p>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Create an Event Your Way 💙</h2>
+
+        <p>
+            Choose the services you need and make your
+            celebration truly special.
+        </p>
+
+    </section>
+
+</body>
+</html>

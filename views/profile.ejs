@@ -1,0 +1,27 @@
+
+<!-- views/profile.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Profile</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="mb-4">👤 User Profile</h2>
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title"><i class="fas fa-user-circle"></i> <%= user.name %></h4>
+                <p class="card-text"><strong>Email:</strong> <%= user.email %></p>
+                <p class="card-text"><strong>Phone:</strong> <%= user.phone || 'Not provided' %></p>
+                <p class="card-text"><strong>Joined on:</strong> <%= user.created_at || 'N/A' %></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Font Awesome & Bootstrap JS -->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

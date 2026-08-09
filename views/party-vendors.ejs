@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Party Vendors | Birthday Vibes</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 60px 20px 50px;
+            background: linear-gradient(135deg, #fff0f6, #ffffff);
+        }
+
+        .hero h1 {
+            color: #ff3d81;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            padding: 30px 20px 10px;
+        }
+
+        .category {
+            padding: 10px 20px;
+            border-radius: 25px;
+            border: 1px solid #ff3d81;
+            background: white;
+            color: #ff3d81;
+        }
+
+        .category.active {
+            background: #ff3d81;
+            color: white;
+        }
+
+        .vendors {
+            width: 90%;
+            max-width: 1150px;
+            margin: 35px auto 70px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .vendor-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .vendor-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .vendor-card img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        .content h2 {
+            color: #ff3d81;
+            font-size: 21px;
+            margin-bottom: 8px;
+        }
+
+        .type {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .rating {
+            color: #e4a400;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .location {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .cta {
+            background: #ff3d81;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            font-size: 16px;
+        }
+
+        @media (max-width: 900px) {
+            .vendors {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .vendors {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Find the Perfect Party Vendors 🎉</h1>
+
+        <p>
+            Discover trusted professionals for your birthday celebration,
+            from decorators and photographers to cakes and entertainment.
+        </p>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="categories">
+
+        <div class="category active">
+            All
+        </div>
+
+        <div class="category">
+            Decorators
+        </div>
+
+        <div class="category">
+            Cake Artists
+        </div>
+
+        <div class="category">
+            Photographers
+        </div>
+
+        <div class="category">
+            DJs & Music
+        </div>
+
+        <div class="category">
+            Entertainers
+        </div>
+
+    </div>
+
+
+    <!-- VENDORS -->
+
+    <section class="vendors">
+
+        <!-- Decorator -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/birthday-decorator.jpg"
+                alt="Birthday Decorator"
+            >
+
+            <div class="content">
+
+                <h2>Dream Party Decor</h2>
+
+                <div class="type">
+                    🎈 Birthday Decoration
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.8 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Creative balloon, theme and personalized
+                    birthday decorations for every celebration.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Cake -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/birthday-cake.jpg"
+                alt="Birthday Cake"
+            >
+
+            <div class="content">
+
+                <h2>Sweet Moments Bakery</h2>
+
+                <div class="type">
+                    🎂 Custom Birthday Cakes
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.9 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Customized cakes with creative designs,
+                    delicious flavors and personalized messages.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Photographer -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/birthday-photographer.jpg"
+                alt="Birthday Photographer"
+            >
+
+            <div class="content">
+
+                <h2>Happy Frames</h2>
+
+                <div class="type">
+                    📸 Event Photography
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.7 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Professional photography to capture
+                    every fun and memorable birthday moment.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- DJ -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/birthday-dj.jpg"
+                alt="Birthday DJ"
+            >
+
+            <div class="content">
+
+                <h2>Party Beats</h2>
+
+                <div class="type">
+                    🎵 DJ & Music
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.6 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    DJ, sound system and music entertainment
+                    to keep your birthday party energetic.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Entertainer -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/birthday-entertainer.jpg"
+                alt="Birthday Entertainer"
+            >
+
+            <div class="content">
+
+                <h2>Fun Time Entertainment</h2>
+
+                <div class="type">
+                    🎭 Party Entertainment
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.8 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Fun games, hosts, magic shows and activities
+                    for kids and family celebrations.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Balloon Artist -->
+
+        <div class="vendor-card">
+
+            <img
+                src="/images/balloon-artist.jpg"
+                alt="Balloon Artist"
+            >
+
+            <div class="content">
+
+                <h2>Balloon Magic</h2>
+
+                <div class="type">
+                    🎈 Balloon Artist
+                </div>
+
+                <div class="rating">
+                    ⭐ 4.7 / 5
+                </div>
+
+                <div class="location">
+                    📍 Nagpur
+                </div>
+
+                <p>
+                    Creative balloon sculptures and unique
+                    balloon decorations for birthday parties.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>Let's Make Your Party Special 🎂</h2>
+
+        <p>
+            Choose the right vendors and create unforgettable
+            birthday memories.
+        </p>
+
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Memories | Anniversary Celebration Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 60px 20px 45px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            color: #666;
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.6;
+        }
+
+        /* Categories */
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            padding: 30px 20px;
+        }
+
+        .category {
+            padding: 10px 22px;
+            border: 1px solid #d62f83;
+            border-radius: 25px;
+            color: #d62f83;
+            background: white;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .category:hover,
+        .category.active {
+            background: #d62f83;
+            color: white;
+        }
+
+        /* Gallery */
+        .gallery {
+            width: 90%;
+            max-width: 1150px;
+            margin: 10px auto 60px;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .memory-card {
+            background: white;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        }
+
+        .memory-card img {
+            width: 100%;
+            height: 230px;
+            object-fit: cover;
+        }
+
+        .memory-content {
+            padding: 18px;
+        }
+
+        .memory-content h3 {
+            color: #d62f83;
+            margin-bottom: 8px;
+            font-size: 20px;
+        }
+
+        .memory-date {
+            font-size: 14px;
+            color: #999;
+            margin-bottom: 10px;
+        }
+
+        .memory-content p {
+            color: #666;
+            line-height: 1.5;
+            font-size: 15px;
+        }
+
+        /* CTA */
+        .create-memory {
+            text-align: center;
+            background: #d62f83;
+            color: white;
+            padding: 50px 20px;
+        }
+
+        .create-memory h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .create-memory p {
+            margin-bottom: 22px;
+            font-size: 16px;
+        }
+
+        .create-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 28px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .create-btn:hover {
+            background: #ffe1ef;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .gallery {
+                grid-template-columns: 1fr;
+                width: 92%;
+            }
+
+            .memory-card img {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <h1>Our Beautiful Memories ❤️</h1>
+
+        <p>
+            Every anniversary is a beautiful chapter of your love story.
+            Relive your special moments and celebrate the memories
+            that made your journey unforgettable.
+        </p>
+
+    </section>
+
+
+    <!-- Categories -->
+    <div class="categories">
+
+        <button class="category active">All</button>
+        <button class="category">Romantic</button>
+        <button class="category">Celebrations</button>
+        <button class="category">Date Nights</button>
+        <button class="category">Special Moments</button>
+
+    </div>
+
+
+    <!-- Memory Gallery -->
+    <section class="gallery">
+
+        <!-- Memory 1 -->
+        <div class="memory-card">
+
+            <img src="/images/memory1.jpg" alt="Romantic Dinner">
+
+            <div class="memory-content">
+
+                <h3>Romantic Dinner ❤️</h3>
+
+                <div class="memory-date">
+                    📅 February 14, 2026
+                </div>
+
+                <p>
+                    A beautiful candlelight dinner filled with love,
+                    laughter and unforgettable moments.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory 2 -->
+        <div class="memory-card">
+
+            <img src="/images/memory2.jpg" alt="Anniversary Celebration">
+
+            <div class="memory-content">
+
+                <h3>Our Anniversary</h3>
+
+                <div class="memory-date">
+                    📅 June 20, 2026
+                </div>
+
+                <p>
+                    Celebrating another beautiful year together
+                    surrounded by happiness and love.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory 3 -->
+        <div class="memory-card">
+
+            <img src="/images/memory3.jpg" alt="Beach Date">
+
+            <div class="memory-content">
+
+                <h3>Beach Date 🌊</h3>
+
+                <div class="memory-date">
+                    📅 March 10, 2026
+                </div>
+
+                <p>
+                    A peaceful evening by the sea with beautiful
+                    sunsets and unforgettable memories.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory 4 -->
+        <div class="memory-card">
+
+            <img src="/images/memory4.jpg" alt="Birthday Celebration">
+
+            <div class="memory-content">
+
+                <h3>Birthday Celebration 🎂</h3>
+
+                <div class="memory-date">
+                    📅 April 15, 2026
+                </div>
+
+                <p>
+                    A special celebration filled with surprises,
+                    smiles and wonderful memories.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory 5 -->
+        <div class="memory-card">
+
+            <img src="/images/memory5.jpg" alt="Couple Date">
+
+            <div class="memory-content">
+
+                <h3>Perfect Date 💕</h3>
+
+                <div class="memory-date">
+                    📅 May 08, 2026
+                </div>
+
+                <p>
+                    Spending quality time together and creating
+                    another beautiful chapter of our story.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- Memory 6 -->
+        <div class="memory-card">
+
+            <img src="/images/memory6.jpg" alt="Special Moment">
+
+            <div class="memory-content">
+
+                <h3>Forever Together 💍</h3>
+
+                <div class="memory-date">
+                    📅 July 05, 2026
+                </div>
+
+                <p>
+                    A special moment that reminds us why every
+                    little memory matters.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Create Memory CTA -->
+    <section class="create-memory">
+
+        <h2>Create Your Own Beautiful Memory ❤️</h2>
+
+        <p>
+            Plan your next anniversary and turn it into
+            a memory you will cherish forever.
+        </p>
+
+        <a href="/packages" class="create-btn">
+            Explore Packages
+        </a>
+
+    </section>
+
+
+    <!-- Category JavaScript -->
+    <script>
+
+        const categories = document.querySelectorAll(".category");
+
+        categories.forEach(category => {
+
+            category.addEventListener("click", () => {
+
+                categories.forEach(item => {
+                    item.classList.remove("active");
+                });
+
+                category.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+</html>

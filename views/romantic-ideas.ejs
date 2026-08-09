@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Romantic Ideas | Anniversary Celebration Hub</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #fff8fb;
+            color: #333;
+        }
+
+        /* HERO */
+
+        .hero {
+            text-align: center;
+            padding: 65px 20px 55px;
+            background: linear-gradient(135deg, #fff0f7, #ffffff);
+        }
+
+        .hero h1 {
+            color: #d62f83;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #666;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        /* IDEAS */
+
+        .ideas-section {
+            width: 90%;
+            max-width: 1150px;
+            margin: 50px auto 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        .section-title h2 {
+            color: #d62f83;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #777;
+        }
+
+        .ideas-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        /* CARD */
+
+        .idea-card {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            transition: 0.3s;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .idea-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .idea-content {
+            padding: 20px;
+        }
+
+        .idea-content h3 {
+            color: #d62f83;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .idea-content p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .idea-tag {
+            display: inline-block;
+            background: #fff0f7;
+            color: #d62f83;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        /* PLANNER */
+
+        .planner {
+            background: white;
+            width: 90%;
+            max-width: 1000px;
+            margin: 0 auto 70px;
+            padding: 40px;
+            border-radius: 18px;
+            box-shadow: 0 5px 18px rgba(0, 0, 0, 0.08);
+            text-align: center;
+        }
+
+        .planner h2 {
+            color: #d62f83;
+            margin-bottom: 12px;
+        }
+
+        .planner p {
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .planner-list {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            text-align: left;
+        }
+
+        .planner-item {
+            background: #fff8fb;
+            padding: 15px;
+            border-radius: 10px;
+            color: #555;
+        }
+
+        .planner-item span {
+            color: #d62f83;
+            font-weight: bold;
+        }
+
+        /* CTA */
+
+        .cta {
+            background: #d62f83;
+            color: white;
+            text-align: center;
+            padding: 55px 20px;
+        }
+
+        .cta h2 {
+            font-size: 30px;
+            margin-bottom: 12px;
+        }
+
+        .cta p {
+            margin-bottom: 25px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: #d62f83;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .cta-btn:hover {
+            background: #ffe2ef;
+        }
+
+        /* RESPONSIVE */
+
+        @media (max-width: 900px) {
+
+            .ideas-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .ideas-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .planner {
+                padding: 25px;
+            }
+
+            .planner-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Romantic Ideas ❤️</h1>
+
+        <p>
+            Looking for the perfect way to celebrate your love?
+            Discover romantic ideas that can turn your anniversary
+            into a beautiful and unforgettable experience.
+        </p>
+
+    </section>
+
+
+    <!-- IDEAS -->
+
+    <section class="ideas-section">
+
+        <div class="section-title">
+
+            <h2>Make Your Anniversary Special</h2>
+
+            <p>
+                Simple ideas that can create beautiful memories together.
+            </p>
+
+        </div>
+
+
+        <div class="ideas-grid">
+
+
+            <!-- Idea 1 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/candlelight-dinner.jpg"
+                    alt="Candlelight Dinner"
+                >
+
+                <div class="idea-content">
+
+                    <h3>🕯️ Candlelight Dinner</h3>
+
+                    <p>
+                        Create a romantic atmosphere with candles,
+                        flowers, soft music and a delicious dinner
+                        for two.
+                    </p>
+
+                    <span class="idea-tag">
+                        Romantic
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Idea 2 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/rooftop-date.jpg"
+                    alt="Rooftop Date"
+                >
+
+                <div class="idea-content">
+
+                    <h3>🌃 Rooftop Date</h3>
+
+                    <p>
+                        Enjoy a beautiful evening under the stars
+                        with city views, dinner and your favorite
+                        person.
+                    </p>
+
+                    <span class="idea-tag">
+                        Date Night
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Idea 3 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/surprise-date.jpg"
+                    alt="Surprise Date"
+                >
+
+                <div class="idea-content">
+
+                    <h3>🎁 Surprise Date</h3>
+
+                    <p>
+                        Plan a surprise date with flowers, gifts
+                        and a special activity your partner loves.
+                    </p>
+
+                    <span class="idea-tag">
+                        Surprise
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Idea 4 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/beach-date.jpg"
+                    alt="Beach Date"
+                >
+
+                <div class="idea-content">
+
+                    <h3>🌊 Sunset Beach Date</h3>
+
+                    <p>
+                        Watch the sunset together, take beautiful
+                        photographs and enjoy a peaceful evening.
+                    </p>
+
+                    <span class="idea-tag">
+                        Outdoor
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Idea 5 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/memory-night.jpg"
+                    alt="Memory Night"
+                >
+
+                <div class="idea-content">
+
+                    <h3>📸 Memory Night</h3>
+
+                    <p>
+                        Create a photo slideshow of your journey
+                        together and relive your favorite moments.
+                    </p>
+
+                    <span class="idea-tag">
+                        Memories
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Idea 6 -->
+
+            <div class="idea-card">
+
+                <img
+                    src="/images/room-surprise.jpg"
+                    alt="Room Surprise"
+                >
+
+                <div class="idea-content">
+
+                    <h3>💕 Romantic Room Surprise</h3>
+
+                    <p>
+                        Decorate the room with flowers, balloons,
+                        fairy lights and personalized messages.
+                    </p>
+
+                    <span class="idea-tag">
+                        Surprise
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ANNIVERSARY PLANNER -->
+
+    <section class="planner">
+
+        <h2>✨ Quick Anniversary Planner</h2>
+
+        <p>
+            Combine these ideas to create your perfect celebration.
+        </p>
+
+        <div class="planner-list">
+
+            <div class="planner-item">
+                <span>01.</span>
+                Choose a romantic venue
+            </div>
+
+            <div class="planner-item">
+                <span>02.</span>
+                Select beautiful decorations
+            </div>
+
+            <div class="planner-item">
+                <span>03.</span>
+                Add flowers & personalized gifts
+            </div>
+
+            <div class="planner-item">
+                <span>04.</span>
+                Plan a special dinner
+            </div>
+
+            <div class="planner-item">
+                <span>05.</span>
+                Capture your beautiful moments
+            </div>
+
+            <div class="planner-item">
+                <span>06.</span>
+                Create memories to cherish forever ❤️
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+
+    <section class="cta">
+
+        <h2>
+            Ready to Create Your Perfect Anniversary? 💍
+        </h2>
+
+        <p>
+            Explore our packages and start planning your
+            unforgettable celebration today.
+        </p>
+
+        <a
+            href="/packages"
+            class="cta-btn"
+        >
+            Explore Packages
+        </a>
+
+    </section>
+
+</body>
+</html>

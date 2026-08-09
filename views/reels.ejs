@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reels</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="./reels.css" />
+</head>
+<body>
+<style>
+  /* aapke styles waise hi hain, koi change nahi kiya */
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #111;
+  color: #fff;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+.reel-container {
+  scroll-snap-type: y mandatory;
+  display: flex;
+  flex-direction: column;
+}
+
+.reel {
+  scroll-snap-align: start;
+  height: 100vh; /* Full screen */
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.actions {
+  position: absolute;
+  right: 12px;
+  bottom: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  font-size: 22px;
+  color: #fff;
+}
+
+.actions i {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.actions i:hover {
+  transform: scale(1.2);
+}
+
+.liked {
+  color: red;
+}
+
+.like-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50px;
+  color: red;
+  animation: heartAnim 0.6s ease-out;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes heartAnim {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.comment-box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #222;
+  padding: 15px;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 10;
+}
+
+.comment-box input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+}
+
+.comment-box button {
+  background: #0095f6;
+  border: none;
+  color: #fff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.share-popup {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10;
+}
+
+.share-popup button {
+  background: #444;
+  border: none;
+  color: #fff;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9;
+}
+
+</style>
+
+
+<div class="reel-container">
+  <% if (videoFiles && videoFiles.length > 0) { 
+       videoFiles.forEach((video, index) => { %>
+    <div class="reel" id="reel-<%= index %>">
+      <video src="/videos/<%= video.video_path %>" autoplay loop playsinline muted></video>
+
+      <div class="actions">
+        <i class="fa-solid fa-heart" data-index="<%= index %>" id="like-<%= index %>"></i>
+        <a href="/sendmoney">
+          <i class="fa-solid fa-indian-rupee-sign"></i>
+        </a>
+        <i class="fa-solid fa-share" data-index="<%= index %>"></i>
+        <i class="fa-solid fa-bookmark"></i>
+        <i class="fa-solid fa-comment" data-index="<%= index %>" title="Add Comment"></i>
+      </div>
+
+      <div class="like-animation" id="likeAnim-<%= index %>">❤️</div>
+    </div>
+  <% }); 
+     } else { %>
+    <div style="height: 100vh; display: flex; justify-content: center; align-items: center; color: #888;">
+      No reels available.
+    </div>
+  <% } %>
+</div>
+
+<!-- Comment Box -->
+<div class="comment-box" id="commentBox" style="display: none;">
+  <input type="text" placeholder="Add a comment..." />
+  <button onclick="sendComment()">Send</button>
+</div>
+
+<!-- Share Popup -->
+<div class="overlay" id="overlay" onclick="closePopups()"></div>
+<div class="share-popup" id="sharePopup">
+  <button onclick="shareTo('whatsapp')">Share to WhatsApp</button>
+  <button onclick="shareTo('snapchat')">Share to Snapchat</button>
+  <button onclick="shareTo('sms')">Share via SMS</button>
+  <button onclick="downloadVideo()">Download Video</button>
+</div>
+
+<script>
+  let userInteracted = false;
+  const videos = document.querySelectorAll('video');
+  let currentVideoSrc = "";
+  let currentReelId = null; // track currently selected reel id for comments, likes, sharing
+
+  // Handle share button click
+  document.querySelectorAll('.fa-share').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      const index = btn.dataset.index;
+      const video = document.querySelector(`#reel-${index} video`);
+      currentVideoSrc = video.getAttribute('src');
+      currentReelId = index;
+      openShare();
+    });
+  });
+
+  // Handle like button click with API call
+  document.querySelectorAll('.fa-heart').forEach(icon => {
+    icon.addEventListener('click', async (e) => {
+      e.stopPropagation();
+      const index = icon.dataset.index;
+      currentReelId = index;
+      const res = await fetch('/like', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reelId: index })
+      });
+      const data = await res.json();
+      icon.classList.toggle('liked', data.liked);
+
+      // Show animation on like
+      const likeAnim = document.querySelector(`#likeAnim-${index}`);
+      likeAnim.style.opacity = 1;
+      setTimeout(() => { likeAnim.style.opacity = 0; }, 600);
+    });
+  });
+
+  // Double tap on reel to like with animation and API call
+  let lastTap = 0;
+  document.querySelectorAll('.reel').forEach(reel => {
+    reel.addEventListener('click', async (e) => {
+      const now = new Date().getTime();
+      const index = reel.id.split('-')[1];
+      const likeBtn = document.querySelector(`#like-${index}`);
+      const likeAnim = document.querySelector(`#likeAnim-${index}`);
+
+      if (now - lastTap < 300) {
+        if (!likeBtn.classList.contains('liked')) {
+          // Call like API
+          const res = await fetch('/like', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ reelId: index })
+          });
+          const data = await res.json();
+          likeBtn.classList.toggle('liked', data.liked);
+        }
+
+        // Show animation
+        likeAnim.style.opacity = 1;
+        setTimeout(() => { likeAnim.style.opacity = 0; }, 600);
+      }
+      lastTap = now;
+    });
+  });
+
+  // Video play/pause toggle on click
+  videos.forEach(video => {
+    video.addEventListener('click', () => {
+      userInteracted = true;
+      if (video.paused) {
+        video.play();
+        video.muted = false;
+      } else {
+        video.pause();
+        video.muted = true;
+      }
+    });
+  });
+
+  // Intersection Observer to autoplay/pause videos in view
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const video = entry.target;
+      if (entry.isIntersecting) {
+        video.currentTime = 0;
+        video.muted = !userInteracted;
+        video.play().catch(() => {});
+      } else {
+        video.pause();
+      }
+    });
+  }, { threshold: 0.5 });
+
+  videos.forEach(video => observer.observe(video));
+
+  // Comment icon click to open comment box for that reel
+  document.querySelectorAll('.fa-comment').forEach(icon => {
+    icon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      currentReelId = icon.dataset.index;
+      openComment();
+    });
+  });
+
+  function openComment() {
+    document.getElementById('commentBox').style.display = 'flex';
+    document.getElementById('commentBox').querySelector('input').focus();
+  }
+
+  async function sendComment() {
+    const input = document.querySelector('#commentBox input');
+    const content = input.value.trim();
+    if (content !== "" && currentReelId !== null) {
+      const res = await fetch('/comment', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ reelId: currentReelId, content })
+      });
+      const data = await res.json();
+      if (data.success) {
+        alert("Comment sent: " + content);
+        input.value = "";
+        closePopups();
+      } else {
+        alert("Failed to send comment");
+      }
+    }
+  }
+
+  function openShare() {
+    document.getElementById('overlay').style.display = 'block';
+    document.getElementById('sharePopup').style.display = 'flex';
+  }
+
+  function closePopups() {
+    document.getElementById('overlay').style.display = 'none';
+    document.getElementById('sharePopup').style.display = 'none';
+    document.getElementById('commentBox').style.display = 'none';
+  }
+
+  function shareTo(platform) {
+    if (!currentVideoSrc) return;
+    const shareUrl = window.location.origin + currentVideoSrc;
+    if (platform === 'whatsapp') {
+      window.open(`https://wa.me/?text=${encodeURIComponent(shareUrl)}`, '_blank');
+    } else if (platform === 'snapchat') {
+      window.open(`https://www.snapchat.com/scan?attachmentUrl=${encodeURIComponent(shareUrl)}`, '_blank');
+    } else if (platform === 'sms') {
+      window.location.href = `sms:?body=${encodeURIComponent(shareUrl)}`;
+    }
+    closePopups();
+  }
+
+  function downloadVideo() {
+    if (!currentVideoSrc) return;
+    const link = document.createElement('a');
+    link.href = currentVideoSrc;
+    link.download = currentVideoSrc.split('/').pop();
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    closePopups();
+  }
+</script>
+
+</body>
+</html>
